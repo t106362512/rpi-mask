@@ -1,0 +1,73 @@
+{
+    "manifest": {
+        "displayName": "Blinky light",
+        "invocationName": "Blinky light",
+        "category": "PRODUCTIVITY"
+    },
+    "actions": [
+        {
+            "name": "com.example.actions.OnOff",
+            "availability": {
+                "deviceClasses": [
+                    {
+                        "assistantSdkDevice": {}
+                    }
+                ]
+            },
+            "intent": {
+                "name": "com.example.intents.OnOff",
+                "parameters": [
+                    {
+                        "name": "state",
+                        "type": "State"
+                    }
+                ],
+                "trigger": {
+                    "queryPatterns": [
+                        "turn device ($State:state)?"
+                    ]
+                }
+            },
+            "fulfillment": {
+                "staticFulfillment": {
+                    "templatedResponse": {
+                        "items": [
+                            {
+                                "simpleResponse": {
+                                    "textToSpeech": "Turned device $state"
+                                }
+                            },
+                            {
+                                "deviceExecution": {
+                                    "command": "com.example.commands.OnOff",
+                                    "params": {
+                                        "state": "$state"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ],
+    "types": [
+        {
+            "name": "$State",
+            "entities": [
+                {
+                    "key": "ON",
+                    "synonyms": [
+                        "on"
+                    ]
+                },
+                {
+                    "key": "OFF",
+                    "synonyms": [
+                        "off"
+                    ]
+                }
+            ]
+        }        
+    ]
+}
