@@ -13,6 +13,8 @@ tenacity = "^6.3.1"
 google-assistant-grpc = "^0.3.0"
 google-assistant-sdk = "^0.6.0"
 adafruit-io = "^2.5.0"
+SpeechRecognition = "^3.8.1"
+PyAudio = "^0.2.11"
 
 [tool.poetry.dev-dependencies]
 autopep8 = "^1.5.6"

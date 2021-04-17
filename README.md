@@ -3,6 +3,7 @@
 This repository contains the [Python][python] packages for the [Google Assistant SDK][google-assistant-sdk].
 
 To get started, see the following developer guides:
+
 - [Introduction to the Google Assistant Service][getting-started-python].
 
 ## Content
@@ -14,4 +15,7 @@ To get started, see the following developer guides:
   - ~~googlesamples/assistant/library: reference sample for the Google Assistant library~~ *deprecated*
 
 ## 使用
+
 - [請先參考此連結，以設定音效卡](rpi-project.md)
+
+- [Voice device](https://medium.com/aiot-taipei/aiot-for-beginner-voice-device-b274248b4176)
