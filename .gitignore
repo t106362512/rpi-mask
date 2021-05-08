@@ -17,3 +17,4 @@ google_assistant.egg-info/
 **/.vscode
 **/*.lock
 **/client_secret*.json
+*.whl
