@@ -6,7 +6,7 @@ import speech_recognition as sr
 from gtts import gTTS
 from pydub import AudioSegment
 from pydub.playback import play
-from GoogleAssistant.pushtotalk import main
+from GoogleAssistant.pushtotalk import main as google_assistant
 
 
 def tts(audioString: str, file_path: os.PathLike=tempfile.NamedTemporaryFile(mode='w').name):
@@ -31,7 +31,7 @@ def main(r: sr.Recognizer=sr.Recognizer()):
                 if my_stt == "谷歌":
                     print("谷歌來喔")
                     try:
-                        x = main()
+                        x = google_assistant()
                         print(x)
                     except SystemExit:
                         pass
