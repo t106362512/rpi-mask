@@ -1,5 +1,6 @@
 from gtts import gTTS
 from pydub import AudioSegment
+from pydub.playback import play
 import speech_recognition as sr
 
 def speak(audioString):
@@ -12,4 +13,4 @@ def speak(audioString):
     # 所以這邊使用pydub將 mp3 轉成 wav 後再進行播放
     sound = AudioSegment.from_mp3("audio.mp3")
     sound.export("myfile.wav",format="wav")
-    play_wav('myfile.wav')
+    play('myfile.wav')
