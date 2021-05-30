@@ -35,7 +35,7 @@
       Subdevice #0: subdevice #0
     ```
 
-2. `vim /home/pi/.asoundrc`  
+2. 修改 `vim /home/pi/.asoundrc`，設定檔二擇一  
 
     ```conf
     pcm.!default {
@@ -54,6 +54,18 @@
       slave {
         pcm "hw:<card number>,<device number>"
       }
+    }
+    ```
+
+    ```conf
+    pcm.!default {
+        type hw
+        card 1
+    }
+
+    ctl.!default {
+        type hw        
+        card 1
     }
     ```
 
@@ -108,6 +120,26 @@
     pi@raspberrypi:~ $ aplay --format=S16_LE --rate=16000 ./out.raw
     Playing raw data './out.raw' : Signed 16 bit Little Endian, Rate 16000 Hz, Mono
     ```
+
+7. ~~使用 https://www.piwheels.org/simple 作為來源，以安裝 pi zero 專用的 python grpcio.~~
+  目前 piwheel 上已編譯的 grpcio 包似乎有問題，自己花一天編譯吧。
+
+  ```bash
+  pip install -U -i https://www.piwheels.org/simple \
+   grpcio
+  ```
+
+8. 因為有 tts 功能的關係，固得參考[連結](https://github.com/jiaaro/pydub#getting-ffmpeg-set-up)，以安 ffmpeg。
+
+  ```bash
+  # libav
+  apt-get install libav-tools libavcodec-extra
+
+  ####    OR    #####
+
+  # ffmpeg
+  apt-get install ffmpeg libavcodec-extra
+  ```
 
 ## 串接 google assistant 服務
 
