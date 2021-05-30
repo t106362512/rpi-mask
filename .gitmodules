@@ -1,0 +1,3 @@
+[submodule "src/CJMCU-8128_RaspberryPi"]
+	path = src/CJMCU-8128_RaspberryPi
+	url = git@github.com:HowardCHT/CJMCU-8128_RaspberryPi.git
