@@ -20,7 +20,7 @@ echo "Activate the venv."
 
 echo "Install package from requirements.txt."
 python -m pip install -r $SCRIPTPATH/../requirements.txt
-python -m pip install -r $SCRIPTPATH/../src/CJMCU-8128_RaspberryPi/requirements.txt
+python -m pip install -r $SCRIPTPATH/../src/rpi-sensor/requirements.txt
 
 echo "Install google outhlib and authorize the application."
 python -m pip install --upgrade google-auth-oauthlib[tool]

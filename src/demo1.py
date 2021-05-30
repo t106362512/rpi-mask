@@ -26,7 +26,7 @@ def main(r: sr.Recognizer=sr.Recognizer()):
                 time.sleep(0.5)
                 print("說些話吧: ")
                 audio = r.listen(source)
-                my_stt = r.recognize_google(audio, language="zh-TW")
+                my_stt = r.recognize_google(audio, language="zh-tw")
                 print(f"echo: {my_stt}")
                 if my_stt == "谷歌":
                     print("谷歌來喔")

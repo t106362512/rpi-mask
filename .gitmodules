@@ -1,0 +1,3 @@
+[submodule "src\\rpi-sensor"]
+	path = src\\rpi-sensor
+	url = git@github.com:HowardCHT/rpi-sensor.git
