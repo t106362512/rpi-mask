@@ -1,7 +1,17 @@
+import os
+import tempfile
+import subprocess
 from gtts import gTTS
 from pydub import AudioSegment
 from pydub.playback import play
-import speech_recognition as sr
+
+
+def tts(audioString: str, file_path: os.PathLike=tempfile.NamedTemporaryFile(mode='w', suffix='.mp3').name):
+    tts = gTTS(text=audioString, lang='zh-tw')
+    tts.save(file_path)
+    # subprocess.check_output(file_path)
+    sound = AudioSegment.from_file(file_path, format='mp3')
+    play(sound)
 
 def speak(audioString):
     # 利用gTTS將文字轉成聲音
@@ -14,3 +24,6 @@ def speak(audioString):
     sound = AudioSegment.from_mp3("audio.mp3")
     sound.export("myfile.wav",format="wav")
     play('myfile.wav')
+
+if __name__ == '__main__':
+    tts('測試喔')

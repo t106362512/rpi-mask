@@ -7,8 +7,11 @@ google-assistant-grpc
 google-assistant-sdk[samples]
 google-auth-oauthlib[tool]
 googleapis-common-protos
-paho-mqtt
+SpeechRecognition
+PyAudio
 gTTS
 AudioSegment
 ffmpeg
+adafruit-circuitpython-bme280
+google-cloud-texttospeech
 # pocketsphinx
